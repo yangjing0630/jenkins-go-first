@@ -14,6 +14,7 @@ ADD . .
 RUN  CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
      && GOSUMDB="off" \
 #    && GOPROXY="https://goproxy.cn,direct" \
+     && go mod download \
      && go build -o hello
 
 #alpine 基础镜像
