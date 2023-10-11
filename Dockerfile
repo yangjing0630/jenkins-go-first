@@ -1,7 +1,7 @@
 
 #golang 基础镜像
 FROM golang:rc-alpine3.15 AS build-env
-
+RUN apk add git
 ENV TIME_ZONE Asia/Shanghai
 
 ENV GO111MODULE="on" \
