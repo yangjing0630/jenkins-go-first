@@ -8,7 +8,9 @@ WORKDIR /root/jenkins-go-first
 #ADD <src> <dst>
 ADD . .
 
-RUN  GOPROXY="https://goproxy.cn,direct" \
+RUN  CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
+     && GOSUMDB="off" \
+#    && GOPROXY="https://goproxy.cn,direct" \
      && go build -o hello
 
 #alpine 基础镜像
