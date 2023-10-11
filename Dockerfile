@@ -9,7 +9,6 @@ WORKDIR /root/jenkins-go-first
 ADD . .
 
 RUN  GOPROXY="https://goproxy.cn,direct" \
-     && go mod tidy \
      && go build -o hello
 
 #alpine 基础镜像
