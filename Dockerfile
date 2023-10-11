@@ -8,10 +8,8 @@ WORKDIR /root/jenkins-go-first
 #ADD <src> <dst>
 ADD . .
 
-RUN  CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 \
-     && GO111MODULE="on" \
-     && GOPROXY="https://goproxy.cn,direct" \
-     && go mod download \
+RUN  GOPROXY="https://goproxy.cn,direct" \
+     && go mod tidy \
      && go build -o hello
 
 #alpine 基础镜像
