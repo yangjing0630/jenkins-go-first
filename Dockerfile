@@ -12,7 +12,7 @@ RUN  CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 \
      && GO111MODULE="on" \
      && GOPROXY="https://goproxy.cn,direct" \
      && go mod download \
-     && time go build -o hello
+     && go build -o hello
 
 #alpine 基础镜像
 FROM alpine:3.15.0
