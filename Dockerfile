@@ -4,6 +4,9 @@ FROM golang:rc-alpine3.15 AS build-env
 
 ENV TIME_ZONE Asia/Shanghai
 
+ENV GO111MODULE="on" \
+    GOPROXY="https://goproxy.cn,direct"
+
 WORKDIR /root/jenkins-go-first
 #ADD <src> <dst>
 ADD . .
